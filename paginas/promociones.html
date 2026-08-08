@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Promociones | Atlantic City</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="../img/favicon.png">
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <link rel="stylesheet" href="../css/promociones.css">
+
+</head>
+
+<body>
+
+    <!--=========================
+            SIDEBAR
+    ==========================-->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <img src="../img/logo.png" alt="Atlantic City">
+        </div>
+
+        <h4>Atlantic City</h4>
+
+        <span>Sistema Web</span>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </li>
+
+            <li onclick="location.href='clientes.html'">
+
+                <i class="fa-solid fa-users"></i>
+
+                Clientes
+
+            </li>
+
+            <li class="active">
+
+                <i class="fa-solid fa-gift"></i>
+
+                Promociones
+
+            </li>
+
+            <li onclick="location.href='visitas.html'">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                Visitas
+
+            </li>
+
+            <li onclick="location.href='reportes.html'">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                Reportes
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!--=========================
+            CONTENIDO
+    ==========================-->
+
+    <main class="main-content">
+
+        <header>
+
+            <div>
+
+                <h2>Gestión de Promociones</h2>
+
+                <p>
+                    Registro y administración de promociones del Casino Atlantic City.
+                </p>
+
+            </div>
+
+        </header>
+
+        <!--=========================
+            FORMULARIO
+        ==========================-->
+
+        <div class="panel">
+
+            <h4>
+
+                <i class="fa-solid fa-tags"></i>
+
+                Registrar Promoción
+
+            </h4>
+
+            <div class="row mt-4">
+                                <div class="col-md-6 mb-3">
+
+                    <label>
+                        <i class="fa-solid fa-barcode"></i>
+                        Código
+                    </label>
+
+                    <input
+                        type="text"
+                        id="codigo"
+                        class="form-control"
+                        placeholder="Ejemplo: PROM001">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label>
+                        <i class="fa-solid fa-tags"></i>
+                        Nombre de la Promoción
+                    </label>
+
+                    <input
+                        type="text"
+                        id="promocion"
+                        class="form-control"
+                        placeholder="Ejemplo: Happy Hour">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label>
+                        <i class="fa-solid fa-percent"></i>
+                        Descuento (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="descuento"
+                        class="form-control"
+                        placeholder="Ejemplo: 20">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label>
+                        <i class="fa-solid fa-calendar-day"></i>
+                        Fecha de Inicio
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fechaInicio"
+                        class="form-control">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label>
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Fecha de Fin
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fechaFin"
+                        class="form-control">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Estado
+                    </label>
+
+                    <select
+                        id="estado"
+                        class="form-select">
+
+                        <option value="Activa">Activa</option>
+
+                        <option value="Inactiva">Inactiva</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <button
+                id="btnGuardar"
+                class="btn btn-primary">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Guardar Promoción
+
+            </button>
+
+            <button
+                id="btnActualizar"
+                class="btn btn-warning ms-2"
+                style="display:none;">
+
+                <i class="fa-solid fa-pen"></i>
+
+                Actualizar
+
+            </button>
+
+        </div>
+
+        <!--=========================
+            BUSCADOR
+        ==========================-->
+
+        <div class="panel mt-4">
+
+            <h4>
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                Buscar Promoción
+
+            </h4>
+
+            <input
+                type="text"
+                id="buscar"
+                class="form-control mt-3"
+                placeholder="Buscar por código o nombre de la promoción...">
+
+        </div>
+                <!--=========================
+                TABLA
+        ==========================-->
+
+        <div class="panel mt-4">
+
+            <h4>
+
+                <i class="fa-solid fa-table"></i>
+
+                Lista de Promociones
+
+            </h4>
+
+            <table class="table table-hover mt-4">
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Código</th>
+                        <th>Promoción</th>
+                        <th>Descuento</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="tablaPromociones">
+
+                </tbody>
+
+            </table>
+
+        </div>
+        <!-- =========================
+        FOOTER
+========================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Información -->
+
+        <div class="footer-col">
+
+            <img
+                src="../img/logo.png"
+                alt="Atlantic City"
+                class="footer-logo">
+
+            <p>
+                Sistema Web de Gestión desarrollado para el Casino Atlantic City.
+            </p>
+
+        </div>
+
+
+        <!-- Contacto -->
+
+        <div class="footer-col">
+
+            <h5>Contacto</h5>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                (+51) 01 555-1234
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                soporte@atlanticcity.com.pe
+            </p>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Miraflores, Lima - Perú
+            </p>
+
+        </div>
+
+
+        <!-- Enlaces -->
+
+        <div class="footer-col">
+
+            <h5>Enlaces</h5>
+
+            <a href="dashboard.html" class="footer-link">
+                Dashboard
+            </a>
+
+            <a href="clientes.html" class="footer-link">
+                Clientes
+            </a>
+
+            <a href="promociones.html" class="footer-link">
+                Promociones
+            </a>
+
+            <a href="visitas.html" class="footer-link">
+                Visitas
+            </a>
+
+            <a href="reportes.html" class="footer-link">
+                Reportes
+            </a>
+
+        </div>
+
+
+        <!-- Redes Sociales -->
+
+        <div class="footer-col">
+
+            <h5>Síguenos</h5>
+
+            <div class="social-icons">
+
+                <a
+                    href="https://www.facebook.com/AtlanticCityPeru"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Facebook Oficial">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                </a>
+
+                <a
+                    href="https://www.instagram.com/atlanticcity.pe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Instagram Oficial">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+                <a
+                    href="https://www.youtube.com/@AtlanticCityPeru"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="YouTube Oficial">
+
+                    <i class="fa-brands fa-youtube"></i>
+
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/company/atlantic-city-casino/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="LinkedIn Oficial">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copy">
+        © 2026 Atlantic City Casino | Desarrollo Web con HTML5, CSS3 y JavaScript.
+    </p>
+
+</footer>
+
+    </main>
+
+    <!-- SweetAlert2 -->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- JavaScript -->
+
+    <script src="../js/promociones.js"></script>
+
+</body>
+
+</html>

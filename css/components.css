@@ -1,0 +1,19 @@
+button{
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+input{
+
+    outline:none;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}

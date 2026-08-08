@@ -1,0 +1,31 @@
+:root{
+
+    /* Colores */
+
+    --color-azul:#071826;
+
+    --color-dorado:#D4AF37;
+
+    --color-dorado-hover:#B89225;
+
+    --color-blanco:#FFFFFF;
+
+    --color-gris:#F5F5F5;
+
+    --color-texto:#333333;
+
+    --color-borde:#D9D9D9;
+
+    /* Sombras */
+
+    --sombra-principal:0 25px 60px rgba(0,0,0,.35);
+
+    /* Bordes */
+
+    --radio:15px;
+
+    /* Fuente */
+
+    --fuente:'Poppins',sans-serif;
+
+}

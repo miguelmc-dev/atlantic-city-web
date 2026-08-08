@@ -1,0 +1,74 @@
+/* ===============================
+        MÓDULO VISITAS
+================================ */
+
+.panel{
+    background:#ffffff;
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.panel h4{
+    color:#0B1F3A;
+    font-weight:700;
+}
+
+label{
+    font-weight:600;
+    color:#444;
+    margin-bottom:6px;
+}
+
+.form-control,
+.form-select{
+    border-radius:10px;
+    border:1px solid #ced4da;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#0B5ED7;
+    box-shadow:0 0 8px rgba(13,110,253,.20);
+}
+
+#btnGuardar{
+    border:none;
+    border-radius:10px;
+    padding:12px 25px;
+    font-weight:600;
+}
+
+#btnActualizar{
+    border:none;
+    border-radius:10px;
+    padding:12px 25px;
+    font-weight:600;
+}
+
+.table thead th{
+    background:#0B1F3A;
+    color:#ffffff;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.table tbody td{
+    text-align:center;
+    vertical-align:middle;
+}
+
+@media(max-width:768px){
+
+    #btnGuardar,
+    #btnActualizar{
+        width:100%;
+        margin:5px 0 !important;
+    }
+
+    .table{
+        font-size:13px;
+    }
+
+}

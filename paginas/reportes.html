@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reportes | Atlantic City</title>
+
+    <link rel="icon" href="../img/favicon.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/reportes.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <img src="../img/logo.png" alt="Atlantic City">
+        </div>
+
+        <h4>Atlantic City</h4>
+        <span>Sistema Web</span>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </li>
+
+            <li onclick="location.href='clientes.html'">
+                <i class="fa-solid fa-users"></i>
+                Clientes
+            </li>
+
+            <li onclick="location.href='promociones.html'">
+                <i class="fa-solid fa-gift"></i>
+                Promociones
+            </li>
+
+            <li onclick="location.href='visitas.html'">
+                <i class="fa-solid fa-calendar-days"></i>
+                Visitas
+            </li>
+
+            <li class="active">
+                <i class="fa-solid fa-chart-column"></i>
+                Reportes
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- CONTENIDO -->
+
+    <main class="main-content">
+
+        <header>
+
+            <div>
+                <h2>Reportes del Sistema</h2>
+                <p>Resumen general de clientes, promociones y visitas registradas.</p>
+            </div>
+
+            <button id="btnImprimir" class="btn btn-warning">
+
+                <i class="fa-solid fa-print"></i>
+                Imprimir Reporte
+
+            </button>
+
+        </header>
+
+        <!-- TARJETAS -->
+
+        <section class="report-cards">
+
+            <div class="report-card clientes-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <div>
+                    <h5>Clientes</h5>
+                    <h2 id="totalClientes">0</h2>
+                    <span>Registrados</span>
+                </div>
+
+            </div>
+
+            <div class="report-card promociones-card">
+
+                <i class="fa-solid fa-gift"></i>
+
+                <div>
+                    <h5>Promociones</h5>
+                    <h2 id="totalPromociones">0</h2>
+                    <span>Registradas</span>
+                </div>
+
+            </div>
+
+            <div class="report-card visitas-card">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                <div>
+                    <h5>Visitas</h5>
+                    <h2 id="totalVisitas">0</h2>
+                    <span>Registradas</span>
+                </div>
+
+            </div>
+
+            <div class="report-card activas-card">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <div>
+                    <h5>Promociones Activas</h5>
+                    <h2 id="promocionesActivas">0</h2>
+                    <span>Disponibles</span>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- =========================
+        GRÁFICO DE REPORTES
+========================== -->
+
+<div class="panel mt-4">
+
+    <h4>
+        <i class="fa-solid fa-chart-pie"></i>
+        Distribución de Registros
+    </h4>
+
+    <div class="grafico-reportes">
+
+        <canvas id="graficoReportes"></canvas>
+
+    </div>
+
+</div>
+<!-- =====================================
+     ANÁLISIS DESTACADO
+===================================== -->
+
+<section class="analisis-destacado">
+
+    <h3>
+        <i class="fa-solid fa-chart-line"></i>
+        Análisis de Información
+    </h3>
+
+    <p class="analisis-subtitulo">
+        Indicadores obtenidos de los registros almacenados en el sistema.
+    </p>
+
+    <div class="analisis-grid">
+
+        <!-- CLIENTE MÁS ACTIVO -->
+
+        <div class="analisis-card cliente-activo">
+
+            <div class="analisis-icon">
+                <i class="fa-solid fa-user-check"></i>
+            </div>
+
+            <div>
+                <span>Cliente más activo</span>
+
+                <h4 id="clienteMasActivo">
+                    Sin registros
+                </h4>
+
+                <small id="visitasClienteActivo">
+                    0 visitas registradas
+                </small>
+            </div>
+
+        </div>
+
+
+        <!-- PROMOCIÓN DESTACADA -->
+
+        <div class="analisis-card promo-destacada">
+
+            <div class="analisis-icon">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+
+            <div>
+                <span>Promoción destacada</span>
+
+                <h4 id="promocionDestacada">
+                    Sin promociones
+                </h4>
+
+                <small>
+                    Promoción disponible en el sistema
+                </small>
+            </div>
+
+        </div>
+
+
+        <!-- CLIENTES VIP -->
+
+        <div class="analisis-card clientes-vip">
+
+            <div class="analisis-icon">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+
+            <div>
+                <span>Clientes VIP</span>
+
+                <h4 id="totalVip">
+                    0
+                </h4>
+
+                <small>
+                    Segmentación de clientes
+                </small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- RESUMEN -->
+
+        <div class="panel mt-4">
+
+            <h4>
+                <i class="fa-solid fa-chart-pie"></i>
+                Resumen General
+            </h4>
+
+            <table class="table table-hover mt-4">
+
+                <thead>
+
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Cantidad</th>
+                        <th>Descripción</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Total de Clientes</td>
+                        <td id="tablaClientes">0</td>
+                        <td>Clientes almacenados en el sistema.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Total de Promociones</td>
+                        <td id="tablaPromociones">0</td>
+                        <td>Promociones registradas.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Promociones Activas</td>
+                        <td id="tablaActivas">0</td>
+                        <td>Promociones disponibles actualmente.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Total de Visitas</td>
+                        <td id="tablaVisitas">0</td>
+                        <td>Visitas registradas en el sistema.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Clientes VIP</td>
+                        <td id="clientesVip">0</td>
+                        <td>Visitas registradas con categoría VIP.</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <!-- FECHA -->
+
+        <div class="panel mt-4">
+
+            <h4>
+                <i class="fa-solid fa-file-lines"></i>
+                Información del Reporte
+            </h4>
+
+            <p>
+                <strong>Fecha de generación:</strong>
+                <span id="fechaReporte"></span>
+            </p>
+
+            <p>
+                Los indicadores presentados se obtienen directamente de la información
+                almacenada en LocalStorage por los módulos de Clientes, Promociones y Visitas.
+            </p>
+
+        </div>
+        <!-- =========================
+        FOOTER
+========================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Información -->
+
+        <div class="footer-col">
+
+            <img
+                src="../img/logo.png"
+                alt="Atlantic City"
+                class="footer-logo">
+
+            <p>
+                Sistema Web de Gestión desarrollado para el Casino Atlantic City.
+            </p>
+
+        </div>
+
+
+        <!-- Contacto -->
+
+        <div class="footer-col">
+
+            <h5>Contacto</h5>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                (+51) 01 555-1234
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                soporte@atlanticcity.com.pe
+            </p>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Miraflores, Lima - Perú
+            </p>
+
+        </div>
+
+
+        <!-- Enlaces -->
+
+        <div class="footer-col">
+
+            <h5>Enlaces</h5>
+
+            <a href="dashboard.html" class="footer-link">
+                Dashboard
+            </a>
+
+            <a href="clientes.html" class="footer-link">
+                Clientes
+            </a>
+
+            <a href="promociones.html" class="footer-link">
+                Promociones
+            </a>
+
+            <a href="visitas.html" class="footer-link">
+                Visitas
+            </a>
+
+            <a href="reportes.html" class="footer-link">
+                Reportes
+            </a>
+
+        </div>
+
+
+        <!-- Redes Sociales -->
+
+        <div class="footer-col">
+
+            <h5>Síguenos</h5>
+
+            <div class="social-icons">
+
+                <a
+                    href="https://www.facebook.com/AtlanticCityPeru"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Facebook Oficial">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                </a>
+
+                <a
+                    href="https://www.instagram.com/atlanticcity.pe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Instagram Oficial">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+                <a
+                    href="https://www.youtube.com/@AtlanticCityPeru"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="YouTube Oficial">
+
+                    <i class="fa-brands fa-youtube"></i>
+
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/company/atlantic-city-casino/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="LinkedIn Oficial">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copy">
+        © 2026 Atlantic City Casino | Desarrollo Web con HTML5, CSS3 y JavaScript.
+    </p>
+
+</footer>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="../js/reportes.js"></script>
+
+</body>
+
+</html>

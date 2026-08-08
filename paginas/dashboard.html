@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Atlantic City Casino</title>
+
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS GENERAL -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <!-- CSS EXCLUSIVO DEL DASHBOARD -->
+    <link rel="stylesheet" href="../css/dashboard-premium.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <img src="../img/logo.png" alt="Atlantic City">
+        </div>
+
+        <h4>Atlantic City</h4>
+        <span>Sistema Web</span>
+
+        <ul>
+
+            <li class="active" onclick="location.href='dashboard.html'">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </li>
+
+            <li onclick="location.href='clientes.html'">
+                <i class="fa-solid fa-users"></i>
+                Clientes
+            </li>
+
+            <li onclick="location.href='promociones.html'">
+                <i class="fa-solid fa-gift"></i>
+                Promociones
+            </li>
+
+            <li onclick="location.href='visitas.html'">
+                <i class="fa-solid fa-calendar-days"></i>
+                Visitas
+            </li>
+
+            <li onclick="location.href='reportes.html'">
+                <i class="fa-solid fa-chart-line"></i>
+                Reportes
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div>
+                <h2>Dashboard</h2>
+                <div class="linea-dorada"></div>
+                <p>Bienvenido al Sistema Atlantic City Casino</p>
+            </div>
+
+            <div class="header-right">
+
+                <div class="fecha-box">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="fechaActual"></span>
+                </div>
+
+                <div class="admin-card">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+
+                    <div>
+                        <small id="saludo"></small>
+                        <h6 id="usuarioNombre"></h6>
+                    </div>
+
+                    <button id="btnSalir" title="Cerrar sesión">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= TARJETAS ================= -->
+
+        <section class="cards">
+
+            <div class="card clientes">
+
+                <div>
+                    <h5>Clientes</h5>
+                    <h2 id="dashClientes">0</h2>
+                    <small>Registrados</small>
+                </div>
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+            </div>
+
+
+            <div class="card promociones">
+
+                <div>
+                    <h5>Promociones</h5>
+                    <h2 id="dashPromociones">0</h2>
+                    <small>Activas</small>
+                </div>
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-gift"></i>
+                </div>
+
+            </div>
+
+
+            <div class="card visitas">
+
+                <div>
+                    <h5>Visitas</h5>
+                    <h2 id="dashVisitas">0</h2>
+                    <small>Este mes</small>
+                </div>
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+
+            </div>
+
+
+            <div class="card reportes">
+
+                <div>
+                    <h5>Reportes</h5>
+                    <h2 id="dashReportes">0</h2>
+                    <small>Generados</small>
+                </div>
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-chart-column"></i>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MOVIMIENTOS ================= -->
+
+        <section class="movimientos-panel">
+
+            <div class="movimientos-titulo">
+
+                <h3>
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Últimos movimientos
+                </h3>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table class="table movimientos-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Módulo</th>
+                            <th>Descripción</th>
+                            <th>Hora</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>03/08/2026</td>
+
+                            <td>
+                                <span class="modulo-badge badge-clientes">
+                                    <i class="fa-solid fa-users"></i>
+                                    Clientes
+                                </span>
+                            </td>
+
+                            <td>Cliente Juan Pérez registrado.</td>
+
+                            <td>
+                                <i class="fa-regular fa-clock"></i>
+                                10:30 AM
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>03/08/2026</td>
+
+                            <td>
+                                <span class="modulo-badge badge-promociones">
+                                    <i class="fa-solid fa-gift"></i>
+                                    Promociones
+                                </span>
+                            </td>
+
+                            <td>Promoción "Black Night" creada.</td>
+
+                            <td>
+                                <i class="fa-regular fa-clock"></i>
+                                09:45 AM
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>03/08/2026</td>
+
+                            <td>
+                                <span class="modulo-badge badge-reportes">
+                                    <i class="fa-solid fa-chart-column"></i>
+                                    Reportes
+                                </span>
+                            </td>
+
+                            <td>Reporte mensual generado.</td>
+
+                            <td>
+                                <i class="fa-regular fa-clock"></i>
+                                08:20 AM
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>03/08/2026</td>
+
+                            <td>
+                                <span class="modulo-badge badge-visitas">
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                    Visitas
+                                </span>
+                            </td>
+
+                            <td>Registro de visitas actualizado.</td>
+
+                            <td>
+                                <i class="fa-regular fa-clock"></i>
+                                07:15 AM
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PARTE INFERIOR ================= -->
+
+        <section class="dashboard-bottom">
+
+            <!-- GRÁFICO -->
+
+            <div class="resumen-panel">
+
+                <h4>Resumen general</h4>
+
+                <div class="grafico-contenedor">
+
+                    <canvas id="resumenChart"></canvas>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCESOS RÁPIDOS -->
+
+            <div class="accesos-panel">
+
+                <h4>Accesos rápidos</h4>
+
+                <div class="quick-grid">
+
+                    <a href="clientes.html" class="quick-card quick-clientes">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <span>Nuevo Cliente</span>
+
+                        <small>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </small>
+
+                    </a>
+
+
+                    <a href="promociones.html" class="quick-card quick-promociones">
+
+                        <i class="fa-solid fa-gift"></i>
+
+                        <span>Nueva Promoción</span>
+
+                        <small>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </small>
+
+                    </a>
+
+
+                    <a href="visitas.html" class="quick-card quick-visitas">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                        <span>Registrar Visita</span>
+
+                        <small>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </small>
+
+                    </a>
+
+
+                    <a href="reportes.html" class="quick-card quick-reportes">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                        <span>Generar Reporte</span>
+
+                        <small>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </small>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PANEL ATLANTIC CITY -->
+
+            <div class="casino-promo">
+
+                <div class="promo-logo">
+
+                    <h3>ATLANTIC CITY</h3>
+
+                    <span>CASINO</span>
+
+                </div>
+
+                <p>
+                    La experiencia que<br>
+                    merecen tus clientes
+                </p>
+
+                <div class="playing-cards">
+
+                    <div class="play-card card1">
+                        A
+                        <span>♥</span>
+                    </div>
+
+                    <div class="play-card card2">
+                        A
+                        <span>♦</span>
+                    </div>
+
+                    <div class="play-card card3">
+                        A
+                        <span>♣</span>
+                    </div>
+
+                    <div class="play-card card4">
+                        A
+                        <span>♠</span>
+                    </div>
+
+                </div>
+
+                <div class="chips">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER COMPACTO ================= -->
+
+        <footer class="dashboard-footer">
+
+            <div class="footer-security">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+                    <strong>Sistema seguro y confiable</strong>
+                    <small>Todos los datos están protegidos</small>
+                </div>
+
+            </div>
+
+            <div>
+                © 2026 Atlantic City Casino | Sistema Web de Gestión
+            </div>
+
+            <div>
+                Versión 1.0.0
+            </div>
+
+            <div class="online">
+                <span></span>
+                En línea
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- CHART.JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- TU JS -->
+
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>
