@@ -1,6 +1,6 @@
 const usuarioSistema="admin";
 
-const claveSistema="123456";
+const claveSistema="idat2026";
 
 const formulario=document.querySelector("form");
 
