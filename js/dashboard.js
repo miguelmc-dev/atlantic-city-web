@@ -1,4 +1,4 @@
-// =======================================
+
 // DATOS DE LOCALSTORAGE
 // =======================================
 
@@ -238,6 +238,32 @@ if(canvasGrafico){
             }
 
         }
+
+    });
+
+}
+// =========================================
+// MENÚ MÓVIL
+// =========================================
+
+const menuToggle = document.getElementById("menuToggle");
+const menuOverlay = document.getElementById("menuOverlay");
+const sidebar = document.querySelector(".sidebar");
+
+if(menuToggle && menuOverlay && sidebar){
+
+    menuToggle.addEventListener("click", () => {
+
+        sidebar.classList.toggle("active");
+        menuOverlay.classList.toggle("active");
+
+    });
+
+
+    menuOverlay.addEventListener("click", () => {
+
+        sidebar.classList.remove("active");
+        menuOverlay.classList.remove("active");
 
     });
 

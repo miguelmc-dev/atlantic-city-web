@@ -26,6 +26,13 @@
 </head>
 
 <body>
+    <!-- BOTÓN MENÚ MÓVIL -->
+<button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<!-- FONDO OSCURO -->
+<div class="menu-overlay" id="menuOverlay"></div>
 
     <!-- SIDEBAR -->
 
@@ -406,6 +413,31 @@
     <!-- JS -->
 
     <script src="../js/visitas.js"></script>
+    <script>
+
+    const menuToggle = document.getElementById("menuToggle");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const sidebar = document.querySelector(".sidebar");
+
+    if(menuToggle && menuOverlay && sidebar){
+
+        menuToggle.addEventListener("click", () => {
+
+            sidebar.classList.toggle("active");
+            menuOverlay.classList.toggle("active");
+
+        });
+
+        menuOverlay.addEventListener("click", () => {
+
+            sidebar.classList.remove("active");
+            menuOverlay.classList.remove("active");
+
+        });
+
+    }
+
+</script>
 
 </body>
 

@@ -1,280 +1,408 @@
-body{
+/* =========================================
+   ATLANTIC CITY - LOGIN
+========================================= */
 
-    background:url("../img/casino-bg.png");
+
+/* =========================================
+   BODY
+========================================= */
+
+body{
+    margin:0;
+    min-height:100vh;
+
+    font-family:"Poppins", sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(3,12,25,.72),
+            rgba(3,12,25,.72)
+        ),
+        url("../img/fondo-login.png");
 
     background-size:cover;
-
     background-position:center;
+    background-repeat:no-repeat;
 
-    font-family:'Poppins',sans-serif;
-
+    overflow-x:hidden;
 }
 
+
+/* =========================================
+   OVERLAY
+========================================= */
+
 .overlay{
-
     width:100%;
+    min-height:100vh;
 
-    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    background:rgba(5,12,25,.70);
+    padding:40px 20px 130px;
+
+    box-sizing:border-box;
+}
+
+
+/* =========================================
+   TARJETA PRINCIPAL
+========================================= */
+
+.login-card{
+    width:980px;
+    max-width:100%;
+    min-height:560px;
 
     display:flex;
 
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-.login-card{
-
-    width:980px;
-
-    min-height:560px;
-
-    background:white;
+    background:#ffffff;
 
     border-radius:25px;
 
     overflow:hidden;
 
-    display:flex;
-
-    box-shadow:0 25px 70px rgba(0,0,0,.45);
-
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.40);
 }
+
+
+/* =========================================
+   PANEL IZQUIERDO
+========================================= */
 
 .left-panel{
-
     width:42%;
 
-    background:linear-gradient(180deg,#071826,#0d2d52);
-
-    color:white;
+    padding:45px 35px;
 
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
     align-items:center;
-
-    padding:50px;
-
-}
-.logo{
-
-    display:flex;
-
-    justify-content:center;
-
-    margin-bottom:25px;
-
-}
-
-.logo img{
-
-    width:180px;
-
-}
-
-.left-panel h2{
-
-    font-size:34px;
-
-    font-weight:700;
-
-}
-
-.left-panel h4{
-
-    color:#D4AF37;
-
-    margin-bottom:25px;
-
-}
-
-.left-panel p{
 
     text-align:center;
 
-    line-height:30px;
+    color:#ffffff;
 
-    color:#d9d9d9;
-
+    background:
+        linear-gradient(
+            160deg,
+            #031a33,
+            #062d50
+        );
 }
 
-.right-panel{
 
-    width:58%;
-
-    padding:60px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
+.logo{
+    margin-bottom:20px;
 }
 
-.right-panel h2{
 
+.logo img{
+    display:block;
+
+    width:120px;
+    height:auto;
+
+    max-width:100%;
+}
+
+
+.left-panel h2{
+    margin:0 0 5px;
+
+    font-size:34px;
     font-weight:700;
 
-    margin-bottom:10px;
-
+    color:#ffffff;
 }
+
+
+.left-panel h4{
+    margin:0 0 20px;
+
+    font-size:23px;
+    font-weight:600;
+
+    color:#d4af37;
+}
+
+
+.left-panel p{
+    max-width:310px;
+
+    margin:0;
+
+    font-size:15px;
+    line-height:27px;
+
+    color:#e7edf5;
+}
+
+
+/* =========================================
+   PANEL DERECHO
+========================================= */
+
+.right-panel{
+    width:58%;
+
+    padding:55px 55px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    background:#ffffff;
+}
+
+
+.right-panel h2{
+    margin-bottom:5px;
+
+    font-size:34px;
+    font-weight:700;
+
+    color:#071826;
+}
+
 
 .subtitulo{
-
-    color:#777;
-
     margin-bottom:35px;
 
+    font-size:14px;
+
+    color:#777777;
 }
 
-label{
 
-    font-weight:600;
+/* =========================================
+   FORMULARIO
+========================================= */
+
+.right-panel form{
+    width:100%;
+}
+
+
+.right-panel label{
+    display:block;
 
     margin-bottom:8px;
 
-}
-
-.form-control{
-
-    height:52px;
-
-    border-radius:10px;
-
-}
-
-.form-control:focus{
-
-    border-color:#D4AF37;
-
-    box-shadow:0 0 8px rgba(212,175,55,.3);
-
-}
-
-.btn-login{
-
-    width:100%;
-
-    height:52px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#D4AF37;
-
-    color:white;
-
+    font-size:14px;
     font-weight:600;
 
-    transition:.30s;
-
+    color:#263746;
 }
 
-.btn-login:hover{
 
-    background:#b89225;
+.right-panel label i{
+    margin-right:6px;
 
+    color:#d4af37;
 }
 
-.forgot{
 
-    text-align:center;
+.form-control{
+    width:100%;
+    height:50px;
 
-    margin-top:25px;
+    padding:10px 15px;
 
+    font-size:14px;
+
+    border:1px solid #d9dee5;
+    border-radius:10px;
+
+    box-sizing:border-box;
+
+    transition:.3s;
 }
 
-.forgot a{
 
-    color:#666;
+.form-control:focus{
+    border-color:#d4af37;
 
+    box-shadow:
+        0 0 0 3px rgba(212,175,55,.15);
+
+    outline:none;
 }
 
-.forgot a:hover{
 
-    color:#D4AF37;
+/* =========================================
+   CONTRASEÑA
+========================================= */
 
-}
 .password-box{
-
     position:relative;
 
+    width:100%;
 }
 
-.password-box span{
 
+.password-box .form-control{
+    padding-right:50px;
+}
+
+
+#togglePassword{
     position:absolute;
 
-    right:15px;
+    top:50%;
+    right:16px;
 
-    top:15px;
+    transform:translateY(-50%);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
     cursor:pointer;
 
-    color:#777;
-
+    color:#777777;
 }
 
-#mensaje{
 
-    margin-top:20px;
+#togglePassword:hover{
+    color:#d4af37;
+}
 
-    padding:12px;
 
+/* =========================================
+   BOTÓN LOGIN
+========================================= */
+
+.btn-login{
+    width:100%;
+    height:50px;
+
+    margin-top:8px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:10px;
+
+    border:none;
     border-radius:10px;
 
-    display:none;
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #e5bd38
+        );
+
+    color:#071826;
+
+    font-size:15px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+
+.btn-login:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(212,175,55,.30);
+}
+
+
+.btn-login:active{
+    transform:translateY(0);
+}
+
+
+/* =========================================
+   MENSAJE LOGIN
+========================================= */
+
+#mensaje{
+    margin-top:10px;
 
     text-align:center;
 
-    font-weight:600;
-
+    font-size:13px;
 }
 
-.error{
 
-    background:#ffe4e4;
+/* =========================================
+   OLVIDÓ CONTRASEÑA
+========================================= */
 
-    color:#b30000;
+.forgot{
+    margin-top:20px;
 
+    text-align:center;
 }
 
-.correcto{
 
-    background:#dff8e3;
+.forgot a{
+    font-size:13px;
 
-    color:#0b7a29;
+    color:#856404;
 
+    text-decoration:none;
+
+    transition:.3s;
 }
 
-.loading{
 
-    opacity:.7;
+.forgot a:hover{
+    color:#d4af37;
 
-    pointer-events:none;
-
+    text-decoration:underline;
 }
-/* =========================
-        FOOTER LOGIN
-========================== */
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal-content{
+    border:none;
+
+    border-radius:15px;
+
+    overflow:hidden;
+}
+
+
+.modal-header{
+    border-bottom:none;
+}
+
+
+.modal-body img{
+    max-width:130px;
+    height:auto;
+}
+
+
+/* =========================================
+   FOOTER LOGIN - ESCRITORIO
+========================================= */
 
 .login-footer{
     position:absolute;
+
     bottom:0;
     left:0;
 
     width:100%;
 
     padding:14px 35px 10px;
+
+    box-sizing:border-box;
 
     color:#ffffff;
 
@@ -285,38 +413,60 @@ label{
             rgba(5,39,72,.90)
         );
 
-    border-top:1px solid rgba(212,175,55,.45);
+    border-top:
+        1px solid rgba(212,175,55,.45);
 
     backdrop-filter:blur(8px);
 }
 
+
 .login-footer-content{
     display:flex;
+
     justify-content:space-between;
     align-items:center;
+
     gap:20px;
 }
+
 
 .footer-contacto{
     display:flex;
     flex-wrap:wrap;
+
     gap:22px;
 }
 
+
 .footer-contacto span{
-    font-size:13px;
-    color:#e8edf4;
+    display:flex;
+    align-items:center;
+
+    gap:8px;
+
+    font-size:12px;
+
+    color:#e9eef5;
 }
 
+
 .footer-contacto i{
-    color:#D4AF37;
-    margin-right:6px;
+    color:#d4af37;
 }
+
+
+/* =========================================
+   REDES SOCIALES
+========================================= */
 
 .footer-redes{
     display:flex;
-    gap:12px;
+
+    align-items:center;
+
+    gap:10px;
 }
+
 
 .footer-redes a{
     width:34px;
@@ -328,7 +478,8 @@ label{
 
     border-radius:50%;
 
-    background:#D4AF37;
+    background:#d4af37;
+
     color:#071826;
 
     text-decoration:none;
@@ -336,35 +487,332 @@ label{
     transition:.3s;
 }
 
+
 .footer-redes a:hover{
-    background:#ffffff;
     transform:translateY(-3px);
+
+    background:#ffffff;
+
+    color:#071826;
 }
+
+
+/* =========================================
+   COPYRIGHT
+========================================= */
 
 .login-footer-copy{
     margin-top:8px;
 
     text-align:center;
 
-    font-size:12px;
+    font-size:11px;
 
-    color:#bfc9d5;
+    color:#cbd5df;
 }
 
-@media(max-width:768px){
+
+/* =========================================
+   RESPONSIVE - TABLET Y CELULAR
+========================================= */
+
+@media (max-width:768px){
+
+    html,
+    body{
+        width:100%;
+
+        margin:0;
+
+        overflow-x:hidden;
+    }
+
+
+    body{
+        min-height:100vh;
+
+        background-position:center;
+        background-size:cover;
+    }
+
+
+    /* CONTENEDOR */
+
+    .overlay{
+        width:100%;
+
+        min-height:auto;
+
+        display:block;
+
+        padding:20px 12px;
+
+        box-sizing:border-box;
+    }
+
+
+    /* TARJETA */
+
+    .login-card{
+        width:100%;
+        max-width:430px;
+
+        min-height:auto;
+
+        margin:0 auto;
+
+        display:flex;
+        flex-direction:column;
+
+        border-radius:20px;
+
+        overflow:hidden;
+    }
+
+
+    /* PANEL SUPERIOR */
+
+    .left-panel{
+        width:100%;
+
+        padding:25px 20px;
+
+        box-sizing:border-box;
+    }
+
+
+    .logo{
+        margin-bottom:10px;
+    }
+
+
+    .logo img{
+        width:100px;
+        height:auto;
+    }
+
+
+    .left-panel h2{
+        font-size:25px;
+
+        margin-bottom:2px;
+    }
+
+
+    .left-panel h4{
+        margin-bottom:10px;
+
+        font-size:18px;
+    }
+
+
+    .left-panel p{
+        max-width:300px;
+
+        font-size:13px;
+        line-height:21px;
+    }
+
+
+    /* FORMULARIO */
+
+    .right-panel{
+        width:100%;
+
+        padding:28px 22px;
+
+        box-sizing:border-box;
+    }
+
+
+    .right-panel h2{
+        font-size:25px;
+
+        text-align:center;
+    }
+
+
+    .subtitulo{
+        margin-bottom:22px;
+
+        font-size:13px;
+
+        text-align:center;
+    }
+
+
+    .form-control{
+        width:100%;
+
+        height:48px;
+
+        font-size:14px;
+    }
+
+
+    .password-box{
+        width:100%;
+    }
+
+
+    .btn-login{
+        width:100%;
+
+        height:48px;
+    }
+
+
+    .forgot{
+        margin-top:18px;
+    }
+
+
+    /* FOOTER */
 
     .login-footer{
         position:relative;
-        padding:20px;
+
+        bottom:auto;
+        left:auto;
+
+        width:100%;
+
+        padding:22px 15px;
+
+        box-sizing:border-box;
     }
+
 
     .login-footer-content{
+        display:flex;
+
         flex-direction:column;
+
+        justify-content:center;
+        align-items:center;
+
+        gap:18px;
     }
 
+
     .footer-contacto{
+        display:flex;
+
+        flex-direction:column;
+
         justify-content:center;
+        align-items:center;
+
+        gap:9px;
+
         text-align:center;
+    }
+
+
+    .footer-contacto span{
+        justify-content:center;
+
+        font-size:12px;
+
+        text-align:center;
+    }
+
+
+    .footer-redes{
+        justify-content:center;
+    }
+
+
+    .footer-redes a{
+        width:36px;
+        height:36px;
+    }
+
+
+    .login-footer-copy{
+        margin-top:15px;
+
+        padding:0 10px;
+
+        font-size:11px;
+        line-height:18px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - CELULARES PEQUEÑOS
+========================================= */
+
+@media (max-width:480px){
+
+    .overlay{
+        padding:12px 8px;
+    }
+
+
+    .login-card{
+        width:100%;
+        max-width:100%;
+
+        border-radius:16px;
+    }
+
+
+    .left-panel{
+        padding:20px 15px;
+    }
+
+
+    .logo img{
+        width:90px;
+    }
+
+
+    .left-panel h2{
+        font-size:22px;
+    }
+
+
+    .left-panel h4{
+        font-size:17px;
+    }
+
+
+    .left-panel p{
+        font-size:12px;
+        line-height:19px;
+    }
+
+
+    .right-panel{
+        padding:24px 17px;
+    }
+
+
+    .right-panel h2{
+        font-size:23px;
+    }
+
+
+    .subtitulo{
+        font-size:12px;
+    }
+
+
+    .form-control{
+        font-size:13px;
+    }
+
+
+    .footer-contacto span{
+        font-size:11px;
+    }
+
+
+    .login-footer-copy{
+        font-size:10px;
     }
 
 }

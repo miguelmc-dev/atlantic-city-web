@@ -59,15 +59,227 @@ label{
     vertical-align:middle;
 }
 
-@media(max-width:768px){
+/* =========================================
+   RESPONSIVE - VISITAS
+========================================= */
+
+@media (max-width:768px){
+
+    .main-content{
+        width:100%;
+        max-width:100vw;
+        margin-left:0;
+
+        padding:80px 15px 25px;
+
+        box-sizing:border-box;
+        overflow-x:hidden;
+    }
+
+
+    /* ENCABEZADO */
+
+    .main-content header{
+        width:100%;
+        max-width:100%;
+        box-sizing:border-box;
+    }
+
+    .main-content header > div{
+        width:100%;
+        max-width:100%;
+    }
+
+    .main-content header h2{
+        width:100%;
+        max-width:100%;
+
+        font-size:28px;
+        line-height:1.2;
+
+        white-space:normal;
+        overflow-wrap:break-word;
+    }
+
+    .main-content header p{
+        width:100%;
+        max-width:100%;
+
+        font-size:14px;
+        line-height:21px;
+
+        white-space:normal;
+        overflow-wrap:break-word;
+    }
+
+
+    /* PANELES */
+
+    .panel{
+        width:100%;
+        max-width:100%;
+
+        padding:20px 15px;
+        margin-bottom:20px;
+
+        box-sizing:border-box;
+        overflow:hidden;
+    }
+
+    .panel h4{
+        width:100%;
+        max-width:100%;
+
+        font-size:20px;
+        line-height:1.3;
+
+        white-space:normal;
+        overflow-wrap:break-word;
+    }
+
+
+    /* FORMULARIO */
+
+    .panel .row{
+        width:100%;
+
+        margin-left:0;
+        margin-right:0;
+    }
+
+    .panel .row > div{
+        width:100%;
+        max-width:100%;
+
+        padding-left:0;
+        padding-right:0;
+    }
+
+    label{
+        display:block;
+
+        width:100%;
+        max-width:100%;
+
+        font-size:14px;
+    }
+
+
+    /* INPUTS */
+
+    .form-control,
+    .form-select{
+        display:block;
+
+        width:100%;
+        max-width:100%;
+
+        box-sizing:border-box;
+
+        font-size:14px;
+    }
+
+
+    /* BOTONES */
 
     #btnGuardar,
     #btnActualizar{
         width:100%;
-        margin:5px 0 !important;
+
+        margin-left:0 !important;
+        margin-top:10px;
+
+        padding:12px;
+
+        box-sizing:border-box;
+    }
+
+
+    /* BUSCADOR */
+
+    #buscar{
+        width:100%;
+        max-width:100%;
+
+        box-sizing:border-box;
+    }
+
+
+    /* TABLA */
+
+    .table-responsive{
+        width:100%;
+        max-width:100%;
+
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
     }
 
     .table{
+        width:max-content;
+        min-width:850px;
+
+        font-size:12px;
+    }
+
+    .table th,
+    .table td{
+        white-space:nowrap;
+    }
+
+
+    /* FOOTER */
+
+    .footer{
+        width:100%;
+        max-width:100%;
+
+        box-sizing:border-box;
+    }
+
+    .footer-container{
+        width:100%;
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:25px;
+    }
+
+}
+
+
+/* =========================================
+   CELULARES PEQUEÑOS
+========================================= */
+
+@media (max-width:480px){
+
+    .main-content{
+        padding-left:12px;
+        padding-right:12px;
+    }
+
+    .main-content header h2{
+        font-size:25px;
+    }
+
+    .main-content header p{
+        font-size:13px;
+    }
+
+    .panel{
+        padding:18px 12px;
+        border-radius:12px;
+    }
+
+    .panel h4{
+        font-size:18px;
+    }
+
+    .form-control,
+    .form-select{
         font-size:13px;
     }
 

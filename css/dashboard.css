@@ -13,7 +13,13 @@ body{
     background:#eef2f7;
     display:flex;
     overflow-x:hidden;
+}    
+    
+.menu-toggle,
+.menu-overlay{
+    display:none;
 }
+
 
 
 /* =========================================
@@ -402,43 +408,152 @@ header p{
 
     body{
         display:block;
+        overflow-x:hidden;
     }
 
-    .sidebar{
-        width:100%;
-        height:auto;
-        position:relative;
+    /* BOTÓN HAMBURGUESA */
+
+    .menu-toggle{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        position:fixed;
+        top:15px;
+        left:15px;
+
+        width:46px;
+        height:46px;
+
+        border:none;
+        border-radius:12px;
+
+        background:#D4AF37;
+        color:#071826;
+
+        font-size:21px;
+
+        cursor:pointer;
+
+        z-index:1200;
+
+        box-shadow:0 6px 18px rgba(0,0,0,.18);
     }
+
+
+    /* FONDO OSCURO */
+
+    .menu-overlay{
+        position:fixed;
+        inset:0;
+
+        background:rgba(0,0,0,.55);
+
+        opacity:0;
+        visibility:hidden;
+
+        transition:.3s;
+
+        z-index:1050;
+    }
+
+    .menu-overlay.active{
+        opacity:1;
+        visibility:visible;
+    }
+
+
+    /* SIDEBAR MÓVIL */
+
+    .sidebar{
+        width:270px;
+        height:100vh;
+
+        position:fixed;
+
+        top:0;
+        left:-280px;
+
+        padding:80px 25px 25px;
+
+        transition:.35s ease;
+
+        z-index:1100;
+
+        overflow-y:auto;
+    }
+
+    .sidebar.active{
+        left:0;
+    }
+
+
+    /* CONTENIDO PRINCIPAL */
 
     .main-content{
         margin-left:0;
+
         width:100%;
-        padding:20px;
+
+        padding:75px 15px 20px;
     }
+
+
+    /* TARJETAS */
 
     .cards{
         grid-template-columns:1fr;
     }
 
+
+    /* HEADER */
+
     header{
         flex-direction:column;
         align-items:flex-start;
+
         gap:15px;
     }
 
-    .top-right{
+    .header-right{
+        width:100%;
+
         flex-direction:column;
         align-items:flex-start;
+
+        gap:12px;
     }
+
+    .admin-card{
+        width:100%;
+        min-width:0;
+
+        justify-content:space-between;
+    }
+
+
+    /* TABLAS */
+
+    .table-responsive{
+        width:100%;
+
+        overflow-x:auto;
+    }
+
+
+    /* FOOTER */
 
     .footer-container{
         grid-template-columns:1fr;
+
         text-align:center;
     }
 
     .social-icons{
         justify-content:center;
     }
+
+
 }
 .footer-col p[onclick]{
     cursor:pointer;
